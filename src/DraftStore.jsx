@@ -8,7 +8,6 @@ const useLocalStore = create((set) => ({
       Localtasks: [
         ...state.Localtasks,
         {
-          fviewjnfewn
           id: crypto.randomUUID(),
           name: title,
           done: false,
