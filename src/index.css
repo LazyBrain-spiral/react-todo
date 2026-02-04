@@ -1,0 +1,286 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body{
+  margin: 0;
+}
+
+/* .navbar{
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  gap: 20px;
+} */
+
+.sidebar{
+  height: 100vh;
+  width: 200px;
+  box-shadow: #333;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
+  list-style: none;
+}
+.sidebar ul{
+  display: flex;
+  margin: 30px;
+  margin-top: 30px;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color: #fb4218;
+  transition: 0.2s ease;
+}
+.sidebar a{
+  text-decoration: none;
+}
+
+.layout{
+  display: flex;
+
+}
+
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logo{
+  margin-left: 30px;
+  margin-top: 10px;
+
+}
+
+.addtask{
+  display: flex;  
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.formyes{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+}
+.formyes form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.taskcard{
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 40px;
+    border-radius: 16px;
+    width: 300px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
+    gap: 5px;
+}
+
+.taskcard1 {
+  background: #ffffff;
+  display: flex;
+
+  padding: 30px 40px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
+  gap: 2px;   
+  align-items: flex-start; 
+  gap: 8px;
+
+}
+
+.formyes label{
+  display: flex;
+  flex-direction: column;
+  font-weight: 1000px;
+  gap: 2px;
+}
+.formyes1 label {
+  display: flex;
+  flex-direction: row;
+  font-weight: 1000px;
+}
+
+.formyes ul:hover {
+  background: #ff5f3c;
+}
+.formyes1 ul:hover {
+  background: #ff5f3c;
+}
+
+.formyes input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+
+}
+.formyes1 input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.formyes1 input:not([type="checkbox"]) {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.checkbox input {
+  width: auto;
+  padding: 0;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.formyes button {
+  width: 100%;
+  padding: 12px;
+  background: #ff7a5c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.formyes1 button {
+  width: 100%;
+  padding: 12px;
+  background: #ff7a5c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.formyes button:hover {
+  background: #ff5f3c;
+}
+.formyes1 button:hover {
+  background: #ff5f3c;
+}
+
+#addbutton{
+    width: 100%;
+    padding: 5px;
+    background: #ff7a5c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#addbutton hover {
+  background: #ff3508;
+}
+
+.addtask h2{
+  margin: 0;
+  margin-top: 10px;
+}
+
+.newcontent{
+  flex: 1;
+}
+
+.newthing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.newthing1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.textthing{
+  display:flex;
+  justify-content: center;
+}
+.textthing input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+#maintask{
+
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.checkbox{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+#new-button {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff7a5c;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#new-button:hover {
+  background-color: #ff5f3c;
+  transition: 0.2s ease;
+}
+
+#new-add{
+  display: flex;
+  gap: 2px;
+}
+
+
