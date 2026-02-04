@@ -12,7 +12,6 @@ function Homepage() {
   return (
     <div className="content">
       <h2>All Tasks</h2>
-      <h2>this is for experiment</h2>
 
       <button onClick={clearTasks}>Clear</button>
       <button onClick={logging}>console</button>
