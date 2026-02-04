@@ -1,51 +1,40 @@
 import React, { useState } from 'react';
+import useStore from "./Store";
 
 function Card() {
-  const [task1, setTask1] = useState(false);
-  const [task2, setTask2] = useState(false);
-  const [task3, setTask3] = useState(false);
+  const newtasks = useStore((state) => state.tasks);
+  const clearTasks = useStore((state) => state.clearTasks);
 
+  const toggleTask = (id) => {
+      newtasks.map(task =>
+        task.id === id ? { ...task, done: !task.done } : task
+    );
+  };
 
   return (
-    <div className='newthing1'>
-      <div className="taskcard1">
-        <div className="formyes1">
-          <form>
-            <label id="maintask">Due Date</label>
-            <label>Status:</label>
-            <label>Due Date:</label>
+    <div>
+      <div className="maintemplate">
+        <h1>Today:</h1>
 
-            <label className='checkbox'>
-              <input
-                type="checkbox"
-                onChange={(e) => setTask1(e.target.checked)}
-              />
-              <span style={{ textDecoration: task1 ? "line-through" : "none" }}>
-                Task 1
-              </span>
-            </label>
+        {newtasks.map((task) => (
+          <div key={task.id}>
+            <input
+              type="checkbox"
+              checked={task.done}
+              onChange={() => toggleTask(task.id)}
+            />
 
-            <label className='checkbox'>
-              <input
-                type="checkbox"
-                onChange={(e) => setTask2(e.target.checked)}
-              />
-              <span style={{ textDecoration: task2 ? "line-through" : "none" }}>
-                Task 2
-              </span>
-            </label>
+            <span
+              style={{
+                textDecoration: task.done ? "line-through" : "none",
+                marginLeft: "8px"
+              }}
+            >
+              {task.name}
+            </span>
+          </div>
+        ))}
 
-            <label className='checkbox'>
-              <input
-                type="checkbox"
-                onChange={(e) => setTask3(e.target.checked)}
-              />
-              <span style={{ textDecoration: task3 ? "line-through" : "none" }}>
-                Task 3
-              </span>
-            </label>
-          </form>
-        </div>
       </div>
     </div>
   );

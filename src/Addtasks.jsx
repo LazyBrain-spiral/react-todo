@@ -34,7 +34,7 @@ function Addtasks() {
               id="new-button"
               type="button"
               onClick={() => {
-                if (!title.trim()) return;
+                
                 localaddTasks(title);
                 setTitle("");
               }}

@@ -32,7 +32,6 @@
 .sidebar{
   height: 100vh;
   width: 200px;
-  box-shadow: #333;
   box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
   list-style: none;
 }
@@ -102,19 +101,7 @@
     gap: 5px;
 }
 
-.taskcard1 {
-  background: #ffffff;
-  display: flex;
 
-  padding: 30px 40px;
-  border-radius: 16px;
-  width: 300px;
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
-  gap: 2px;   
-  align-items: flex-start; 
-  gap: 8px;
-
-}
 
 .formyes label{
   display: flex;
@@ -122,11 +109,7 @@
   font-weight: 1000px;
   gap: 2px;
 }
-.formyes1 label {
-  display: flex;
-  flex-direction: row;
-  font-weight: 1000px;
-}
+
 
 .formyes ul:hover {
   background: #ff5f3c;
@@ -144,29 +127,7 @@
   outline: none;
 
 }
-.formyes1 input {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  outline: none;
-  transition: 0.2s ease;
-}
 
-.formyes1 input:not([type="checkbox"]) {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.checkbox input {
-  width: auto;
-  padding: 0;
-  margin-right: 10px;
-  cursor: pointer;
-}
 
 .formyes button {
   width: 100%;
@@ -179,23 +140,11 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
-.formyes1 button {
-  width: 100%;
-  padding: 12px;
-  background: #ff7a5c;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
+
 .formyes button:hover {
   background: #ff5f3c;
 }
-.formyes1 button:hover {
-  background: #ff5f3c;
-}
+
 
 #addbutton{
     width: 100%;
@@ -228,12 +177,6 @@
   align-items: center;
   margin-top: 50px;
 }
-.newthing1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
 
 .textthing{
   display:flex;
@@ -246,18 +189,18 @@
   justify-content: center;
 }
 
-#maintask{
 
-  font-size: 25px;
-  font-weight: bold;
-
+.maintemplate {
+  margin : 0;
+  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  position: fixed;
+  top: 39%;
+  left: 55%;
+  border-radius: 10px;
+  
 }
 
-.checkbox{
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
 
 #new-button {
   width: 45px;
