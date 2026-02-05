@@ -4,7 +4,10 @@ import useLocalStore from "./DraftStore";
 
 function Addtasks() {
   const addTasks = useStore((state) => state.addTasks);
-  const { Localtasks, localaddTasks, clearLocalTasks } = useLocalStore();
+  const Localtasks = useLocalStore((state) => state.Localtasks);
+  const localaddTasks = useLocalStore((state) => state.localaddTasks);
+  const clearLocalTasks = useLocalStore((state) => state.clearLocalTasks);
+
   const [title, setTitle] = useState("");
 
   const submitFunction = (e) => {

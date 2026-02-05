@@ -3,12 +3,13 @@ import useStore from "./Store";
 
 function Card() {
   const newtasks = useStore((state) => state.tasks);
-  const clearTasks = useStore((state) => state.clearTasks);
+  const updatedtasks = useStore((state) => state.updateTasks);
 
   const toggleTask = (id) => {
-      newtasks.map(task =>
+      const updated =newtasks.map(task =>
         task.id === id ? { ...task, done: !task.done } : task
     );
+    updatedtasks(updated);
   };
 
   return (

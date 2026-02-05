@@ -12,6 +12,7 @@ const useStore = create(
         })),
 
       clearTasks: () => set({ tasks: [] }),
+      updateTasks: (updatedtasks)=>set({tasks : updatedtasks})
     }),
     {
       name: "task-storage",
