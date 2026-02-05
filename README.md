@@ -27,7 +27,7 @@ This project was created to understand:
 
 * React
 * Zustand
-* JavaScript (ES6+)
+* JavaScript
 * CSS
 
 ## 📦 Installation
