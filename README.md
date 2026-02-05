@@ -1,15 +1,52 @@
-# React + Vite
+# 📝 Task Manager App (React + Zustand)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple task management web app built with **React** and **Zustand** for state management.
+This project focuses on learning modern React patterns like immutable state updates, controlled components, and global state handling.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Add new tasks
+* Toggle task completion (checkbox + strike-through)
+* Global state management using Zustand
+* Persistent task storage
+* Clean component-based architecture
+* Real-time UI updates
 
-## React Compiler
+## 🧠 Learning Goals
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project was created to understand:
 
-## Expanding the ESLint configuration
-addee new branch
+* React state flow
+* Immutable updates with arrays and objects
+* Controlled form inputs
+* Zustand global state management
+* Rendering lists with `.map()`
+* Component structure & data flow
+
+## 🛠 Tech Stack
+
+* React
+* Zustand
+* JavaScript (ES6+)
+* CSS
+
+## 📦 Installation
+
+```bash
+git clone <repo-url>
+cd project-folder
+npm install
+npm run dev
+```
+
+## 🎯 Future Improvements
+
+* Task deletion
+* Filters (done / pending)
+* Due dates
+* UI polish
+* Drag & drop sorting
+
+---
+
+This project is part of my learning journey into React and modern frontend architecture.
