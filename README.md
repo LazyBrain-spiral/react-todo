@@ -49,4 +49,4 @@ npm run dev
 
 ---
 
-This project is part of my learning journey into React and modern frontend architecture.
+This project is part of my learning journey into React
