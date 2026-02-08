@@ -12,7 +12,6 @@ function Sidebar() {
             <ul className='sidelinks'>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/addtasks">Add Tasks</Link></li>
-                <li><Link to="/card">Done</Link></li>
                 <li><Link to="/current">Due Tasks</Link></li>
                 <li><Link to="/current">Due Tasks</Link></li>
             </ul>

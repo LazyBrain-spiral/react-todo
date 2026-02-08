@@ -12,7 +12,9 @@ const useStore = create(
         })),
 
       clearTasks: () => set({ tasks: [] }),
-      updateTasks: (updatedtasks)=>set({tasks : updatedtasks})
+      updateTasks: (updated)=>set({tasks : updated}),
+      deletetasks: (id) => set((state) => ({tasks: state.tasks.filter(task => task.id !== id)})),
+      editTasks:(id,newName)=>set((state)=>({tasks: state.tasks.map(task => task.id === id ? {...task, name: newName} : task)}))
     }),
     {
       name: "task-storage",
