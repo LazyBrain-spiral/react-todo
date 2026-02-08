@@ -34,9 +34,11 @@ function Homepage() {
       ))}
       <div className="maintemplate">
         <h1>Today:</h1>
+        {tasks.length === 0 && <p>No tasks yet</p>}
 
         {newtasks.map((task) => (
           <div key={task.id}>
+            
             <input
               type="checkbox"
               checked={task.done}
