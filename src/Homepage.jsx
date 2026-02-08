@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useStore from "./Store";
+import EditIcon from "./Components/EditIcon";
+import DeleteIcon from "./Components/DeleteIcon";
+import './index.css'
 
 function Homepage() {
   const tasks = useStore((state) => state.tasks);
-  const clearTasks = useStore((state) => state.clearTasks);
   const newtasks = useStore((state) => state.tasks);
   const updatedtasks = useStore((state) => state.updateTasks);
   const deletetasks = useStore((state) => state.deletetasks);
   const editTasks = useStore((state) => state.editTasks);
+  const [title, setTitle] = useState("Today");
+
 
 
   const toggleTask = (id) => {
@@ -16,6 +20,10 @@ function Homepage() {
     );
     updatedtasks(updated);
   };
+  useEffect(() => {
+    const input = prompt("Enter your title", "Today");
+    if (input) setTitle(input);}, []);
+
 
   const logging = ()=>{
     console.log(tasks)
@@ -24,18 +32,9 @@ function Homepage() {
   return (
     <div className="content">
       <h2>All Tasks</h2>
-      <button onClick={clearTasks}>Clear</button>
-      <button onClick={logging}>console</button>
 
-      
-
-      {tasks.map((task) => (
-        <p key={task.id}>{task.name}</p>
-      ))}
       <div className="maintemplate">
-        <h1>Today:</h1>
-        {tasks.length === 0 && <p>No tasks yet</p>}
-
+        <h1>{title}:</h1>
         {newtasks.map((task) => (
           <div key={task.id}>
             
@@ -47,14 +46,17 @@ function Homepage() {
             <span
               style={{
                 textDecoration: task.done ? "line-through" : "none",
-                marginLeft: "8px"
+                marginLeft: "8px", marginRight: "10px"
               }}
             >
               
               {task.name}
             </span>
-            <button onClick={() => deletetasks(task.id)}>Delete</button>
-            <button onClick={() => editTasks(task.id, prompt("Enter new name"))}>Edit</button>
+            
+              <button id="button1" onClick={() => deletetasks(task.id)}><DeleteIcon/></button>
+              <button id="button2" onClick={() => editTasks(task.id, prompt("Enter new name", task.name))}><EditIcon/></button>
+            
+           
           </div>
         ))}
 

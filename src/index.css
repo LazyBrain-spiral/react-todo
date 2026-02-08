@@ -195,9 +195,25 @@
   box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
   padding: 50px 50px;
   position: fixed;
-  top: 39%;
-  left: 50%;
+  top: 35%;
+  left: 45%;
   border-radius: 10px;
+}
+
+#button1 {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  margin-right: 3px;
+}
+#button2 {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
 }
 
 
