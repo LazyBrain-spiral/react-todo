@@ -4,7 +4,7 @@ import deletebutton from "../assets/delete.svg"
 function DeleteIcon() {
   return (
     <div>
-      <img src={deletebutton} alt="Delete" width={15} height={15} />
+      <img src={deletebutton} alt="Delete" width={25} height={25} />
     </div>
   )
 }

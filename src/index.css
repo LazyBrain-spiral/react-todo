@@ -12,9 +12,6 @@
   box-sizing: border-box;
 }
 
-.body{
-  margin: 0;
-}
 
 /* .navbar{
   display: flex;
@@ -40,16 +37,22 @@
   margin: 30px;
   margin-top: 30px;
   flex-direction: column;
+  font-size: large;
   gap: 30px;
   list-style: none;
   text-decoration: none;
 }
 .sidebar a:hover {
-  color: #fb4218;
+  color: #f6d2cb;
+  background-color: #ff5f3c;
   transition: 0.2s ease;
+  border-radius: 5px;
+  padding: 2px 2px;
 }
 .sidebar a{
   text-decoration: none;
+  border-radius: 5px;
+  padding: 2px 2px;
 }
 
 .layout{
@@ -64,8 +67,9 @@
   flex-direction: column;
 }
 .logo{
-  margin-left: 30px;
+  margin-left: 50px;
   margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 
@@ -125,7 +129,10 @@
   border: 1px solid #ccc;
   font-size: 14px;
   outline: none;
+}
 
+#darkmode{
+  margin-top: auto;
 }
 
 
@@ -241,4 +248,42 @@
   gap: 2px;
 }
 
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
 
+.linebreak {
+  border: 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 16px;
+}
+
+#darkmode{
+  margin: 17px;
+
+}
+#darkmode :hover{
+  
+  background-color: grey;
+  transition: 0.2s;
+  border-radius: 5px;
+  padding: 2px 2px
+
+}
+#darkmode button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 13px;
+  gap: 12px;
+}
+#darkmode button:focus {
+  outline: none;
+}

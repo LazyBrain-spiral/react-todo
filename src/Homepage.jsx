@@ -35,6 +35,7 @@ function Homepage() {
 
       <div className="maintemplate">
         <h1>{title}:</h1>
+        {tasks.length === 0 ? <p>No tasks added yet!</p> : null}
         {newtasks.map((task) => (
           <div key={task.id}>
             
