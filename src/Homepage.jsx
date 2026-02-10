@@ -7,6 +7,7 @@ import Threecomponents from "./Threecomponents";
 import correctSvg from "./assets/correct.svg"
 import overdueSvg from "./assets/Overdue.svg"
 import pendingSvg from "./assets/pending.svg"
+import Todolist from "./Components/Todolist"
 function Homepage() {
   const tasks = useStore((state) => state.tasks);
   const newtasks = useStore((state) => state.tasks);
@@ -36,15 +37,15 @@ function Homepage() {
       <h2 id="title">{title}</h2>
 
       <div className="maincard">
-        <Threecomponents name="Completed" img={correctSvg} />
-        <Threecomponents name="Pending" img={pendingSvg} />
-        <Threecomponents name="Overdue" img={overdueSvg}/>
+        <Threecomponents name="Completed" img={correctSvg} color = "#e9fcdd" />
+        <Threecomponents name="Pending" img={pendingSvg} color = "#fde1c6" />
+        <Threecomponents name="Overdue" img={overdueSvg} color = "#f9d5d5"/>
       </div>
 
 
 
       <div className="maintemplate">
-        {tasks.length === 0 ? <p>No tasks added yet!</p> : null}
+        {tasks.length === 0 ? <Todolist/>: null}
         {newtasks.map((task) => (
           <div key={task.id}>
             <input
