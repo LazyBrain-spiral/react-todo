@@ -4,7 +4,7 @@ import editButton from "../assets/edit.svg"
 function EditIcon() {
   return (
     <div>
-      <img src={editButton} alt="Edit" width={25} height={25} />
+      <img src={editButton} alt="Edit" width={20} height={20} />
     </div>
   )
 }

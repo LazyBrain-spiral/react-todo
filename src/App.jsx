@@ -5,6 +5,7 @@ import Homepage from './Homepage.jsx'
 import Sidebar from './Sidebar.jsx'
 import { Routes, Route } from "react-router-dom";
 import Addtasks from './Addtasks.jsx'
+import Navbar from './Navbar.jsx'
 
 
 
@@ -15,12 +16,18 @@ function App() {
     <>
     <div className="layout">
       <Sidebar/>
-      <div className="newcontent">
-        <Routes>
-          <Route path = '/' element = {<Homepage/>}/>
-          <Route path = '/addtasks' element = {<Addtasks/>}/>
-      </Routes>
+      <div className="grid">
+        <div className='navbar'><Navbar /></div>
+        <div className="newcontent">
+          <Routes>
+            <Route path = '/' element = {<Homepage/>}/>
+            <Route path = '/addtasks' element = {<Addtasks/>}/>
+        </Routes>
+        </div>
+
+
       </div>
+      
     </div>
 
     </>
