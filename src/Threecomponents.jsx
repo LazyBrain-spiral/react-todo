@@ -10,6 +10,7 @@ function Threecomponents(props) {
         <img src={props.img} alt="" width={20} height={20} style={{marginRight:7}} />
         {props.name}
       </h3>
+      <h3 className='propscount'>{props.count}</h3>
     </div>
   );
 }

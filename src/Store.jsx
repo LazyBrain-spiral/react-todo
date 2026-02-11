@@ -17,6 +17,12 @@ const useStore = create(
       editTasks:(id,newName)=>set((state)=>({tasks: state.tasks.map(task => task.id === id ? {...task, name: newName} : task)})),
       showmodal: true,
       setShowmodal: (value) => set({ showmodal: value }), 
+      count : 0,
+      incrementCount: () => set((state) => ({ count: state.count + 1 })),
+      decrementCount: () => set((state) => ({ count: state.count - 1 })),
+      pendingCount: 0,
+      incrementPendingCount: () => set((state) => ({ pendingCount: state.pendingCount + 1 })),
+      decrementPendingCount: () => set((state) => ({ pendingCount: state.pendingCount - 1 })),
     }),
     {
       name: "task-storage",

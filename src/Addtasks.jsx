@@ -9,6 +9,13 @@ function Addtasks() {
   const localaddTasks = useLocalStore((state) => state.localaddTasks);
   const clearLocalTasks = useLocalStore((state) => state.clearLocalTasks);
   const setShowmodal = useStore((state) => state.setShowmodal);
+  const count = useStore((state) => state.count);
+  const pendingCount = useStore((state) => state.pendingCount); 
+  const incrementCount = useStore((state) => state.incrementCount);
+  const decrementCount = useStore((state) => state.decrementCount);
+  const incrementPendingCount = useStore((state) => state.incrementPendingCount);
+  const decrementPendingCount = useStore((state) => state.decrementPendingCount);
+
 
 
   const [title, setTitle] = useState("");
@@ -36,10 +43,10 @@ function Addtasks() {
             <button
               id="new-button"
               type="button"
-              onClick={() => {
-                
+              onClick={() => {  
                 localaddTasks(title);
                 setTitle("");
+                incrementPendingCount();
               }}
             >
               +

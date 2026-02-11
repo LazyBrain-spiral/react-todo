@@ -20,7 +20,7 @@ function App() {
     <div className="layout"> 
       <Sidebar/>
       <div className="grid">
-        <div className='navbar'><Navbar /></div>
+        <Navbar />
         <div className="newcontent">
           <Routes>
             <Route path = '/' element = {<Homepage/>}/>

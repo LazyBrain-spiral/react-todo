@@ -8,7 +8,7 @@ import useStore from '../Store'
 function todolist() {
   const setshowModal = useStore((state) => state.setShowmodal);
   return (
-    <div>
+    <div className='todolist'>
         <img src={todolists} alt="Todo Lists" width={100} height={100} />
         <h3>No tasks for today!</h3>
         <button onClick={()=>{setshowModal(true)}} className='addnewtask'>Add task</button>

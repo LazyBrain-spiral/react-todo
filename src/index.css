@@ -67,9 +67,26 @@
 }
 .navbar{
   display: flex;
-  justify-content: center;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.07);
-
+  align-items: center;
+  padding: 0 20px;
+}
+.nav-addtask{
+  margin-left: auto;
+  padding: 5px 10px;
+  background-color: #ff7a5c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.nav-header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 1px;
 }
 .content{
   margin: 20px;
@@ -353,7 +370,7 @@
 
 .addnewtask{
   width: 50%;
-  padding: 5px;
+  padding: 10px 5px;
   background: #ff7a5c;
   color: white;
   border: none;
@@ -362,6 +379,18 @@
   cursor: pointer;
   transition: 0.2s ease;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todolist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.propscount{
+  margin-left: auto;
 }
 
 .justalink{

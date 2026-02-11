@@ -16,6 +16,12 @@ function Homepage() {
   const deletetasks = useStore((state) => state.deletetasks);
   const editTasks = useStore((state) => state.editTasks);
   const [title, setTitle] = useState("Today");
+  const count = useStore((state) => state.count);
+  const pendingCount = useStore((state) => state.pendingCount); 
+  const incrementCount = useStore((state) => state.incrementCount);
+  const decrementCount = useStore((state) => state.decrementCount);
+  const incrementPendingCount = useStore((state) => state.incrementPendingCount);
+  const decrementPendingCount = useStore((state) => state.decrementPendingCount);
 
   const toggleTask = (id) => {
     const updated = newtasks.map(task =>
@@ -38,21 +44,30 @@ function Homepage() {
       <h2 id="title">{title}</h2>
 
       <div className="maincard">
-        <Threecomponents name="Completed" img={correctSvg} color = "#e9fcdd" />
-        <Threecomponents name="Pending" img={pendingSvg} color = "#fde1c6" />
+        <Threecomponents name="Completed" img={correctSvg} color = "#e9fcdd" count={count} />
+        <Threecomponents name="Pending" img={pendingSvg} color = "#fde1c6" count={pendingCount} />
         <Threecomponents name="Overdue" img={overdueSvg} color = "#f9d5d5"/>
       </div>
 
 
 
-      <div className="maintemplate">
+      <div className="maintemplate" >
         {tasks.length === 0 ? <Todolist/>: null}
         {newtasks.map((task) => (
-          <div key={task.id}>
+          <div key={task.id} style={{ display: "flex",alignItems: "center" }}>
             <input
               type="checkbox"
               checked={task.done}
-              onChange={() => toggleTask(task.id)}
+              onChange={() => {
+                toggleTask(task.id);
+                if (task.done) {
+                  decrementCount();
+                  incrementPendingCount();
+                } else {
+                  incrementCount();
+                  decrementPendingCount();
+                }
+              }}
             />
             <span
               style={{
@@ -62,8 +77,8 @@ function Homepage() {
             >
               {task.name}
             </span>
-            <button id="button1" onClick={() => deletetasks(task.id)}><DeleteIcon/></button>
-            <button id="button2" onClick={() => editTasks(task.id, prompt("Enter new name", task.name))}><EditIcon/></button>
+            <button id="button1" onClick={() => { deletetasks(task.id); decrementCount(); }}><DeleteIcon/></button>
+            <button id="button2" onClick={() => { editTasks(task.id, prompt("Enter new name", task.name)); }}><EditIcon/></button>
           </div>
         ))}
       </div>
