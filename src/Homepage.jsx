@@ -77,7 +77,7 @@ function Homepage() {
             >
               {task.name}
             </span>
-            <button id="button1" onClick={() => { deletetasks(task.id); decrementCount(); }}><DeleteIcon/></button>
+            <button id="button1" onClick={() => { deletetasks(task.id); decrementCount(); decrementPendingCount()}}><DeleteIcon/></button>
             <button id="button2" onClick={() => { editTasks(task.id, prompt("Enter new name", task.name)); }}><EditIcon/></button>
           </div>
         ))}

@@ -19,10 +19,10 @@ const useStore = create(
       setShowmodal: (value) => set({ showmodal: value }), 
       count : 0,
       incrementCount: () => set((state) => ({ count: state.count + 1 })),
-      decrementCount: () => set((state) => ({ count: state.count - 1 })),
+      decrementCount: () => set((state) => ({ count: Math.max(0, state.count - 1) })),
       pendingCount: 0,
       incrementPendingCount: () => set((state) => ({ pendingCount: state.pendingCount + 1 })),
-      decrementPendingCount: () => set((state) => ({ pendingCount: state.pendingCount - 1 })),
+      decrementPendingCount: () => set((state) => ({ pendingCount: Math.max(0, state.pendingCount - 1) })),
     }),
     {
       name: "task-storage",
