@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import useStore from "./Store";
 import useLocalStore from "./DraftStore";
 
+
 function Addtasks() {
   const addTasks = useStore((state) => state.addTasks);
   const Localtasks = useLocalStore((state) => state.Localtasks);
   const localaddTasks = useLocalStore((state) => state.localaddTasks);
   const clearLocalTasks = useLocalStore((state) => state.clearLocalTasks);
+  const setShowmodal = useStore((state) => state.setShowmodal);
+
 
   const [title, setTitle] = useState("");
 
@@ -16,17 +19,14 @@ function Addtasks() {
     addTasks(Localtasks);
     clearLocalTasks();
     setTitle("");
+    setShowmodal(false);
   };
 
   return (
     <div className="addtask">
-      <h2>ADD A NEW TASK!</h2>
-
-     
+      <button className="X" onClick={()=>{setShowmodal(false)}}>x</button>
       <div className="taskcard">
         <form className="formyes" onSubmit={submitFunction}>
-          
-     
           <div id="new-add">
             <input
               value={title}

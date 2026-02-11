@@ -14,7 +14,9 @@ const useStore = create(
       clearTasks: () => set({ tasks: [] }),
       updateTasks: (updated)=>set({tasks : updated}),
       deletetasks: (id) => set((state) => ({tasks: state.tasks.filter(task => task.id !== id)})),
-      editTasks:(id,newName)=>set((state)=>({tasks: state.tasks.map(task => task.id === id ? {...task, name: newName} : task)}))
+      editTasks:(id,newName)=>set((state)=>({tasks: state.tasks.map(task => task.id === id ? {...task, name: newName} : task)})),
+      showmodal: true,
+      setShowmodal: (value) => set({ showmodal: value }), 
     }),
     {
       name: "task-storage",

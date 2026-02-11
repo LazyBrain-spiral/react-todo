@@ -83,14 +83,31 @@
 
 }
 
-.addtask{
-  display: flex;  
+.addtask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
-
+.X{
+  all:unset;
+  color: #ff3508;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 1000px;
+}
 .formyes{
   display: flex;
   flex-direction: column;
@@ -114,8 +131,6 @@
     box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.12);
     gap: 5px;
 }
-
-
 
 .formyes label{
   display: flex;
@@ -322,7 +337,7 @@
 }
 .maincard{
   display: flex;
-  gap: 25px;
+  gap: 32px;
 }
 
 .card{

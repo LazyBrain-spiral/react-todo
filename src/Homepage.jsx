@@ -8,6 +8,7 @@ import correctSvg from "./assets/correct.svg"
 import overdueSvg from "./assets/Overdue.svg"
 import pendingSvg from "./assets/pending.svg"
 import Todolist from "./Components/Todolist"
+
 function Homepage() {
   const tasks = useStore((state) => state.tasks);
   const newtasks = useStore((state) => state.tasks);
