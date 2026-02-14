@@ -22,6 +22,10 @@ function Homepage() {
   const decrementCount = useStore((state) => state.decrementCount);
   const incrementPendingCount = useStore((state) => state.incrementPendingCount);
   const decrementPendingCount = useStore((state) => state.decrementPendingCount);
+  console.log(tasks)
+
+  const [currentDate, setCurrentDate] = useState("Sat Feb 15 2026")
+
 
   const toggleTask = (id) => {
     const updated = newtasks.map(task =>
@@ -33,7 +37,13 @@ function Homepage() {
   useEffect(() => {
     const input = prompt("Enter your title", "Today");
     if (input) setTitle(input);
+    // const today = new Date().toDateString();
+    setCurrentDate(new Date().toDateString())
+    // const today = "Sat Feb 15 2026"
   }, []);
+
+    console.log("date: ", currentDate)
+
 
   const logging = () => {
     console.log(tasks)

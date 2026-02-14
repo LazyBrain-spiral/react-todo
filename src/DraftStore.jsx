@@ -11,6 +11,7 @@ const useLocalStore = create((set) => ({
           id: crypto.randomUUID(),
           name: title,
           done: false,
+          date: new Date().toDateString(),
         },
       ],
     })),

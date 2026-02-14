@@ -5,6 +5,7 @@ const useStore = create(
   persist(
     (set) => ({
       tasks: [],
+      overdue: [],
 
       addTasks: (newTasks) =>
         set((state) => ({
