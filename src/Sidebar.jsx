@@ -6,6 +6,7 @@ import AddIcon from './Components/Addbutton'
 import DueDateIcon from './Components/DuedateIcon'
 import DarkIcon from './Components/DarkIcon'
 import Block from './Components/Block'
+import CalendarIcon from './Components/CalendarIcon'
 
 
 function Sidebar() {
@@ -20,6 +21,12 @@ function Sidebar() {
                     <Link to="/" className="nav-link">
                         <HomeIcon />
                         <span>Home</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/calendar" className="nav-link">
+                        <CalendarIcon />
+                        <span>Calendar</span>
                     </Link>
                 </li>
                 <li>

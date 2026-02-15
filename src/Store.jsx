@@ -24,6 +24,23 @@ const useStore = create(
       pendingCount: 0,
       incrementPendingCount: () => set((state) => ({ pendingCount: state.pendingCount + 1 })),
       decrementPendingCount: () => set((state) => ({ pendingCount: Math.max(0, state.pendingCount - 1) })),
+
+      // NEW: Streak tracking
+      streakData: {},
+      incrementStreak: (dateString) =>
+        set((state) => ({
+          streakData: {
+            ...state.streakData,
+            [dateString]: (state.streakData[dateString] || 0) + 1,
+          },
+        })),
+      decrementStreak: (dateString) =>
+        set((state) => ({
+          streakData: {
+            ...state.streakData,
+            [dateString]: Math.max(0, (state.streakData[dateString] || 0) - 1),
+          },
+        })),
     }),
     {
       name: "task-storage",

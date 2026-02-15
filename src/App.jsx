@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Addtasks from './Addtasks.jsx'
 import Navbar from './Navbar.jsx'
 import useStore from './Store.jsx'
+import Calendar from './Calendar.jsx'
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <div className="newcontent">
           <Routes>
             <Route path = '/' element = {<Homepage/>}/>
+            <Route path = '/calendar' element = {<Calendar/>}/>
         </Routes>
         </div>
 
