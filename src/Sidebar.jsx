@@ -30,7 +30,7 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/current" className="nav-link">
+                    <Link to="/duetask" className="nav-link">
                         <DueDateIcon />
                         <span>Due Tasks</span>
                     </Link>

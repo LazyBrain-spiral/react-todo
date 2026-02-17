@@ -27,7 +27,7 @@ function Homepage() {
   const incrementStreak = useStore((state) => state.incrementStreak);
   const decrementStreak = useStore((state) => state.decrementStreak);
   
-  console.log(tasks)
+  // console.log(tasks)
 
   const [currentDate, setCurrentDate] = useState("Sat Feb 15 2026")
 
@@ -52,19 +52,15 @@ function Homepage() {
   };
 
   useEffect(() => {
-    const input = prompt("Enter your title", "Today");
-    if (input) setTitle(input);
     // const today = new Date().toDateString();
     setCurrentDate(new Date().toDateString())
     // const today = "Sat Feb 15 2026"
   }, []);
 
-    console.log("date: ", currentDate)
+    // console.log("date: ", currentDate)
 
 
-  const logging = () => {
-    console.log(tasks)
-  }
+
 
   return (
     <div className="content">

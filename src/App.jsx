@@ -8,6 +8,7 @@ import Addtasks from './Addtasks.jsx'
 import Navbar from './Navbar.jsx'
 import useStore from './Store.jsx'
 import Calendar from './Calendar.jsx'
+import Duetask from './Duetask.jsx'
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path = '/' element = {<Homepage/>}/>
             <Route path = '/calendar' element = {<Calendar/>}/>
+            <Route path = '/duetask' element = {<Duetask/>}/>
         </Routes>
         </div>
 
