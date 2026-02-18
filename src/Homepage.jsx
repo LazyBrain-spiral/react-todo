@@ -23,11 +23,11 @@ function Homepage() {
   const incrementPendingCount = useStore((state) => state.incrementPendingCount);
   const decrementPendingCount = useStore((state) => state.decrementPendingCount);
   
-  // NEW: Streak tracking
+  
   const incrementStreak = useStore((state) => state.incrementStreak);
   const decrementStreak = useStore((state) => state.decrementStreak);
   
-  // console.log(tasks)
+ 
 
   const [currentDate, setCurrentDate] = useState("Sat Feb 15 2026")
 
@@ -41,23 +41,23 @@ function Homepage() {
     );
     updatedtasks(updated);
     
-    // NEW: Track streak when task is completed
+    
     if (task && !task.done) {
-      // Task is being marked as done
+      
       incrementStreak(currentDateString);
     } else if (task && task.done) {
-      // Task is being unmarked
+      
       decrementStreak(currentDateString);
     }
   };
 
   useEffect(() => {
-    // const today = new Date().toDateString();
+    
     setCurrentDate(new Date().toDateString())
-    // const today = "Sat Feb 15 2026"
+    
   }, []);
 
-    // console.log("date: ", currentDate)
+    
 
 
 
