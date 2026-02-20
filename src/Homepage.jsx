@@ -57,6 +57,8 @@ function Homepage() {
     
   }, []);
 
+  console.log(tasks);
+
     
 
 

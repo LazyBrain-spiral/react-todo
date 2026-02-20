@@ -35,12 +35,6 @@ function Sidebar() {
                         <span>Due Tasks</span>
                     </Link>
                 </li>
-                <li>
-                    <Link to="/current" className="nav-link">
-                        <Block />
-                        <span>Block site</span>
-                    </Link>
-                </li>
             </ul>
             <hr className='linebreak' />
             <div id="darkmode">
