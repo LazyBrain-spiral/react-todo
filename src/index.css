@@ -239,22 +239,7 @@
 }
 
 
-/* .maintemplate {
-  margin : 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
-  padding: 90px 360px;
-  min-height: 330px;
-  min-width: 100px;
-  position: fixed;
-  top: 37%;
-  left: 19%;
-  flex-direction: column;
-  border-radius: 10px;
-  width: 100%;
-} */
+
 .maintemplate {
   margin-top: 30px;
   width: 100%;
@@ -266,6 +251,23 @@
   align-items: center;
   overflow: hidden;
   box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--background-color);
+  color: var(--color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] {
+  background-color: #333;
+  color: #fff;
+}
+
+[data-theme="light"] {
+  background-color: #fff;
+  color: #333;
+}
+.childcomponent,
+.childcomponent span {
+  color: var(--color) !important;
 }
 
 #button1 {

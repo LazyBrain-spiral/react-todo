@@ -81,10 +81,10 @@ function Homepage() {
 
 
 
-      <div className="maintemplate" >
+      <div className="maintemplate" data-theme={useStore((state) => state.isDarkMode) ? "dark" : "light"}>
         {tasks.length === 0 ? <Todolist/>: null}
         {newtasks.map((task) => (
-          <div key={task.id} style={{ display: "flex",alignItems: "center" }}>
+          <div key={task.id} className="childcomponent"style={{ display: "flex",alignItems: "center" }}>
             <input
               type="checkbox"
               checked={task.done}

@@ -7,9 +7,12 @@ import DueDateIcon from './Components/DuedateIcon'
 import DarkIcon from './Components/DarkIcon'
 import Block from './Components/Block'
 import CalendarIcon from './Components/CalendarIcon'
+import useStore from './Store'
 
 
 function Sidebar() {
+    const isDarkMode = useStore((state) => state.isDarkMode);
+    const setIsDarkMode = useStore((state) => state.setIsDarkMode);
   return (
     
         <div className="sidebar">
@@ -38,7 +41,7 @@ function Sidebar() {
             </ul>
             <hr className='linebreak' />
             <div id="darkmode">
-                <button>
+                <button onClick={() => setIsDarkMode(!isDarkMode)}>
                     <DarkIcon />
                     <span>Dark mode</span>
                 </button>
