@@ -5,8 +5,6 @@ const useStore = create(
   persist(
     (set) => ({
       tasks: [],
-      overdue: [],
-
       addTasks: (newTasks) =>
         set((state) => ({
           tasks: [...state.tasks, ...newTasks],
@@ -24,8 +22,9 @@ const useStore = create(
       pendingCount: 0,
       incrementPendingCount: () => set((state) => ({ pendingCount: state.pendingCount + 1 })),
       decrementPendingCount: () => set((state) => ({ pendingCount: Math.max(0, state.pendingCount - 1) })),
-
-      // NEW: Streak tracking
+      overdueCount: 0,
+      incrementOverdueCount: () => set((state) => ({ overdueCount: state.overdueCount + 1 })),
+      decrementOverdueCount: () => set((state) => ({ overdueCount: Math.max(0, state.overdueCount - 1) })),
       streakData: {},
       incrementStreak: (dateString) =>
         set((state) => ({

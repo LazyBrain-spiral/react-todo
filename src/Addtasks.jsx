@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import useStore from "./Store";
 import useLocalStore from "./DraftStore";
 
-
 function Addtasks() {
+  const tasks = useStore((state) => state.tasks);
   const addTasks = useStore((state) => state.addTasks);
   const Localtasks = useLocalStore((state) => state.Localtasks);
   const localaddTasks = useLocalStore((state) => state.localaddTasks);
@@ -15,15 +15,34 @@ function Addtasks() {
   const decrementCount = useStore((state) => state.decrementCount);
   const incrementPendingCount = useStore((state) => state.incrementPendingCount);
   const decrementPendingCount = useStore((state) => state.decrementPendingCount);
-
-
+  
+  
+  const today = new Date().toDateString(); 
+  
+  const overdueCount = useStore((state) => state.overdueCount);
+  const incrementOverdueCount = useStore((state) => state.incrementOverdueCount);
 
   const [title, setTitle] = useState("");
+
+  
+  const incrementingOverdue = () => {
+    Localtasks.forEach(task => {
+      
+      if (!task.done && new Date(task.date) < new Date(today)) {
+        incrementOverdueCount();
+      }
+    });
+  };
 
   const submitFunction = (e) => {
     e.preventDefault();
     if (Localtasks.length === 0) return;
+    
     addTasks(Localtasks);
+    
+    
+    incrementingOverdue(); 
+    
     clearLocalTasks();
     setTitle("");
     setShowmodal(false);
@@ -47,6 +66,7 @@ function Addtasks() {
                 localaddTasks(title);
                 setTitle("");
                 incrementPendingCount();
+                // FIX 3: Removed incrementingOverdue() from here because the state is too slow to read it instantly
               }}
             >
               +

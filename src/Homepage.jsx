@@ -22,10 +22,15 @@ function Homepage() {
   const decrementCount = useStore((state) => state.decrementCount);
   const incrementPendingCount = useStore((state) => state.incrementPendingCount);
   const decrementPendingCount = useStore((state) => state.decrementPendingCount);
+  const today = "Fri Feb 19 2026";
+  const overdueCount = useStore((state) => state.overdueCount);
+  const incrementOverdueCount = useStore((state) => state.incrementOverdueCount);
+  const decrementOverdueCount = useStore((state) => state.decrementOverdueCount);
   
-  
+
   const incrementStreak = useStore((state) => state.incrementStreak);
   const decrementStreak = useStore((state) => state.decrementStreak);
+
   
  
 
@@ -71,7 +76,7 @@ function Homepage() {
       <div className="maincard">
         <Threecomponents name="Completed" img={correctSvg} color = "#e9fcdd" count={count} />
         <Threecomponents name="Pending" img={pendingSvg} color = "#fde1c6" count={pendingCount} />
-        <Threecomponents name="Overdue" img={overdueSvg} color = "#f9d5d5"/>
+        <Threecomponents name="Overdue" img={overdueSvg} color = "#f9d5d5" count={overdueCount}/>
       </div>
 
 
@@ -102,7 +107,7 @@ function Homepage() {
             >
               {task.name}
             </span>
-            <button id="button1" onClick={() => { deletetasks(task.id); decrementCount(); decrementPendingCount()}}><DeleteIcon/></button>
+            <button id="button1" onClick={() => { deletetasks(task.id); decrementCount(); decrementPendingCount(); if (today !== task.date){decrementOverdueCount()}}}><DeleteIcon/></button>
             <button id="button2" onClick={() => { editTasks(task.id, prompt("Enter new name", task.name)); }}><EditIcon/></button>
           </div>
         ))}
