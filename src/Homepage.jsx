@@ -22,7 +22,7 @@ function Homepage() {
   const decrementCount = useStore((state) => state.decrementCount);
   const incrementPendingCount = useStore((state) => state.incrementPendingCount);
   const decrementPendingCount = useStore((state) => state.decrementPendingCount);
-  const today = "Fri Feb 19 2026";
+  const today = new Date().toDateString();
   const overdueCount = useStore((state) => state.overdueCount);
   const incrementOverdueCount = useStore((state) => state.incrementOverdueCount);
   const decrementOverdueCount = useStore((state) => state.decrementOverdueCount);

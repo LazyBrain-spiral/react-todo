@@ -3,7 +3,7 @@ import useStore from './Store'
 
 function Duetask() {
   const tasks = useStore((state) => state.tasks);
-  const today = "Fri Feb 19 2026";
+  const today = new Date().toDateString();
   
   const grouped = useMemo(() => {
     
