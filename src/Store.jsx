@@ -25,7 +25,7 @@ const useStore = create(
       overdueCount: 0,
       incrementOverdueCount: () => set((state) => ({ overdueCount: state.overdueCount + 1 })),
       decrementOverdueCount: () => set((state) => ({ overdueCount: Math.max(0, state.overdueCount - 1) })),
-      isDarkMode: true,
+      isDarkMode: false,
       setIsDarkMode: (value) => set({ isDarkMode: value }),
       streakData: {},
       incrementStreak: (dateString) =>
